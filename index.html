@@ -4,13 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRECIENDO | A TinyGoat Ventures Company</title>
+    <title>Creciendo Studio | Digital Growth for Latino Businesses</title>
+    <meta name="description"
+        content="We build the digital storefronts that Chicago’s Latino-owned businesses deserve. Bilingual websites, SEO, and growth systems for taquerias and local legends.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://creciendo.studio/">
+    <meta property="og:title" content="Creciendo Studio | Digital Growth for Latino Businesses">
+    <meta property="og:description"
+        content="We build the digital storefronts that Chicago’s Latino-owned businesses deserve. Bilingual websites, SEO, and growth systems.">
+    <meta property="og:image" content="https://creciendo.studio/images/hero_culture.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://creciendo.studio/">
+    <meta property="twitter:title" content="Creciendo Studio | Digital Growth for Latino Businesses">
+    <meta property="twitter:description"
+        content="We build the digital storefronts that Chicago’s Latino-owned businesses deserve.">
+    <meta property="twitter:image" content="https://creciendo.studio/images/hero_culture.png">
+
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 
 <body class="lang-es"> <!-- Default to Spanish class on body for CSS targeting -->
@@ -23,7 +38,7 @@
         <div class="nav-right">
             <ul class="nav-links">
                 <li>
-                    <a href="#services">
+                    <a href="#partners">
                         <span class="es">Nuestro Trabajo</span>
                         <span class="en">Our Work</span>
                     </a>
@@ -32,12 +47,6 @@
                     <a href="#services">
                         <span class="es">Precios</span>
                         <span class="en">Pricing</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#audit" class="highlight-link">
-                        <span class="es">La Auditoría</span>
-                        <span class="en">The Audit</span>
                     </a>
                 </li>
             </ul>
@@ -67,6 +76,11 @@
                 <span class="en">We build the digital storefronts that Chicago’s Latino-owned businesses deserve. Move
                     beyond outdated systems and start owning your growth.</span>
             </p>
+
+            <div class="hero-flags" aria-label="Latin American Flags">
+                🇲🇽 🇨🇴 🇪🇨 🇵🇷 🇨🇺 🇵🇪 🇩🇴 🇻🇪 🇬🇹 🇸🇻
+            </div>
+
             <a href="#audit" class="btn btn-primary">
                 <span class="es">Conecta con Nosotros</span>
                 <span class="en">Connect with Us</span>
@@ -158,6 +172,41 @@
         </div>
     </section>
 
+    <!-- Partners / Who We Serve Section (Placeholder for Our Work) -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="es">A Quién Ayudamos</span>
+                <span class="en">Who We Serve</span>
+            </h2>
+            <div class="partners-list">
+                <div class="partner-type">
+                    <span class="icon">🌮</span>
+                    <h3>Taquerías</h3>
+                </div>
+                <!-- <div class="divider">•</div> -->
+                <div class="partner-type">
+                    <span class="icon">🥐</span>
+                    <h3>Panaderías</h3>
+                </div>
+                <!-- <div class="divider">•</div> -->
+                <div class="partner-type">
+                    <span class="icon">☕</span>
+                    <h3>Cafés</h3>
+                </div>
+                <!-- <div class="divider">•</div> -->
+                <div class="partner-type">
+                    <span class="icon">✂️</span>
+                    <h3>Barberías</h3>
+                </div>
+            </div>
+            <p class="partners-note">
+                <span class="es">Y cualquier negocio local listo para crecer.</span>
+                <span class="en">And any and ALL local businesses ready to grow!</span>
+            </p>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
@@ -225,15 +274,20 @@
                     <span class="en">Let's Talk Business.</span>
                 </h2>
                 <p class="audit-desc">
-                    <span class="es">Déjanos tu información y el nombre de tu taquería. Nosotros investigaremos tu
+                    <span class="es">Déjanos tu información y el nombre de tu negocio. Nosotros investigaremos tu
                         presencia actual y te contactaremos con un plan.</span>
-                    <span class="en">Leave your info and your taqueria's name. We'll look up your current presence and
+                    <span class="en">Leave your info and your business name. We'll look up your current presence and
                         reach out with a plan.</span>
                 </p>
 
-                <form class="contact-form" name="creciendo-contact" method="POST" data-netlify="true">
-                    <input type="text" name="business_name" placeholder="Nombre de la Taquería / Business Name"
-                        required>
+                <form class="contact-form" action="https://formsubmit.co/gabby@tinygoat.ai" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_next" id="redirect-url" value="https://creciendo.studio/success.html">
+                    <input type="hidden" name="_subject" value="New Lead from Creciendo Website!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <input type="text" name="business_name" placeholder="Nombre del Negocio / Business Name" required>
                     <input type="url" name="website" placeholder="Sitio Web (Si tienes) / Website (If any)">
                     <input type="tel" name="phone" placeholder="Número de Teléfono / Phone Number" required>
                     <textarea name="interest" placeholder="¿Qué te interesa mejorar? / What are you interested in?"
@@ -243,6 +297,12 @@
                         <span class="en">Connect with Creciendo</span>
                     </button>
                 </form>
+
+                <script>
+                    // Dynamically set result URL to current domain so it works on Netlify or custom domain
+                    const currentOrigin = window.location.origin;
+                    document.getElementById('redirect-url').value = currentOrigin + '/success.html';
+                </script>
             </div>
         </div>
     </section>
