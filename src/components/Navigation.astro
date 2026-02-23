@@ -5,7 +5,8 @@ interface Props {
 
 const { lang } = Astro.props;
 const alternateLang = lang === 'es' ? 'en' : 'es';
-const alternateUrl = lang === 'es' ? '/en/' : '/es/';
+const alternateUrl = lang === 'es' ? '/' : '/es/';
+const homeUrl = lang === 'es' ? '/es/' : '/';
 
 const text = {
   es: {
@@ -26,7 +27,7 @@ const t = text[lang];
 <nav class="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm shadow-sm">
   <div class="relative max-w-6xl mx-auto px-8 min-h-[80px] md:min-h-[110px] flex items-center justify-end">
     <!-- Logo (centered vertically, positioned left) -->
-    <a href={`/${lang}/`} class="absolute left-0 md:left-[-5.5rem] top-1/2 -translate-y-1/2 z-[101]">
+    <a href={homeUrl} class="absolute left-0 md:left-[-5.5rem] top-1/2 -translate-y-1/2 z-[101]">
       <img
         src="/images/logo_transparent.png"
         alt="Creciendo Logo"
