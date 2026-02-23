@@ -10,12 +10,12 @@ const homeUrl = lang === 'es' ? '/es/' : '/';
 
 const text = {
   es: {
-    work: 'Nuestro Trabajo',
+    work: 'Cómo Funciona',
     pricing: 'Precios',
     contact: 'Contáctanos'
   },
   en: {
-    work: 'Our Work',
+    work: 'How It Works',
     pricing: 'Pricing',
     contact: 'Contact Us'
   }
@@ -38,7 +38,7 @@ const t = text[lang];
 
     <!-- Desktop Nav -->
     <div class="hidden md:flex items-center gap-6">
-      <a href="#partners" class="text-charcoal hover:text-terracotta transition-colors font-medium">
+      <a href="#process" class="text-charcoal hover:text-terracotta transition-colors font-medium">
         {t.work}
       </a>
       <a href="#services" class="text-charcoal hover:text-terracotta transition-colors font-medium">
@@ -69,7 +69,7 @@ const t = text[lang];
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-gray-200 px-4 py-4">
     <div class="flex flex-col gap-4">
-      <a href="#partners" class="text-charcoal hover:text-terracotta transition-colors font-medium">
+      <a href="#process" class="text-charcoal hover:text-terracotta transition-colors font-medium">
         {t.work}
       </a>
       <a href="#services" class="text-charcoal hover:text-terracotta transition-colors font-medium">
