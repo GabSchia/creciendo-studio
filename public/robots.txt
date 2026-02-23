@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://creciendo.studio/sitemap-index.xml

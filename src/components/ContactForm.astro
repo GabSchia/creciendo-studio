@@ -1,0 +1,89 @@
+---
+interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const successUrl = lang === 'es' ? '/es/exito/' : '/en/success/';
+
+const text = {
+  es: {
+    title: 'Hablemos de tu Negocio.',
+    description: 'Déjanos tu información y el nombre de tu negocio. Nosotros investigaremos tu presencia actual y te contactaremos con un plan.',
+    businessName: 'Nombre del Negocio',
+    website: 'Sitio Web (Si tienes)',
+    phone: 'Número de Teléfono',
+    interest: '¿Qué te interesa mejorar?',
+    submit: 'Conectar con Creciendo'
+  },
+  en: {
+    title: "Let's Talk Business.",
+    description: "Leave your info and your business name. We'll look up your current presence and reach out with a plan.",
+    businessName: 'Business Name',
+    website: 'Website (If any)',
+    phone: 'Phone Number',
+    interest: 'What are you interested in improving?',
+    submit: 'Connect with Creciendo'
+  }
+};
+
+const t = text[lang];
+---
+
+<section id="audit" class="bg-forest py-20">
+  <div class="max-w-2xl mx-auto px-4">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-cream text-center mb-4">
+      {t.title}
+    </h2>
+    <p class="text-cream/70 text-center mb-10 max-w-lg mx-auto">
+      {t.description}
+    </p>
+
+    <form
+      action="https://formsubmit.co/gabby@tinygoat.ai"
+      method="POST"
+      class="bg-cream/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-cream/20"
+    >
+      <!-- FormSubmit Configuration -->
+      <input type="hidden" name="_next" value={`https://creciendo.studio${successUrl}`} />
+      <input type="hidden" name="_subject" value="New Lead from Creciendo Website!" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+
+      <div class="space-y-4">
+        <input
+          type="text"
+          name="business_name"
+          placeholder={t.businessName}
+          required
+          class="w-full px-4 py-3 bg-cream/10 border border-cream/30 rounded-lg text-cream placeholder:text-cream/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
+        />
+        <input
+          type="url"
+          name="website"
+          placeholder={t.website}
+          class="w-full px-4 py-3 bg-cream/10 border border-cream/30 rounded-lg text-cream placeholder:text-cream/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder={t.phone}
+          required
+          class="w-full px-4 py-3 bg-cream/10 border border-cream/30 rounded-lg text-cream placeholder:text-cream/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
+        />
+        <textarea
+          name="interest"
+          placeholder={t.interest}
+          rows="3"
+          class="w-full px-4 py-3 bg-cream/10 border border-cream/30 rounded-lg text-cream placeholder:text-cream/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all resize-none"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full px-6 py-4 bg-terracotta text-cream font-bold rounded-full hover:bg-terracotta-dark hover:-translate-y-0.5 transition-all duration-300 shadow-lg"
+        >
+          {t.submit}
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

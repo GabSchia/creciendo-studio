@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="¡Gracias! | Creciendo Studio"
+  description="Gracias por contactarnos. Pronto nos pondremos en contacto."
+  lang="es"
+>
+  <main class="min-h-screen bg-forest flex items-center justify-center px-4">
+    <div class="text-center max-w-lg">
+      <div class="text-6xl mb-6">🎉</div>
+      <h1 class="font-display text-4xl md:text-5xl font-bold text-cream mb-4">
+        ¡Gracias!
+      </h1>
+      <p class="text-cream/80 text-lg mb-8">
+        Recibimos tu información. Investigaremos tu presencia actual y te contactaremos con un plan personalizado muy pronto.
+      </p>
+      <a
+        href="/es/"
+        class="inline-flex items-center px-8 py-4 bg-terracotta text-cream font-semibold rounded-full hover:bg-terracotta-dark transition-all duration-300"
+      >
+        Volver al Inicio
+      </a>
+      <p class="text-cream/50 text-sm mt-8">
+        Redirigiendo automáticamente en <span id="countdown">5</span> segundos...
+      </p>
+    </div>
+  </main>
+
+  <script>
+    let seconds = 5;
+    const countdownEl = document.getElementById('countdown');
+
+    const interval = setInterval(() => {
+      seconds--;
+      if (countdownEl) countdownEl.textContent = String(seconds);
+      if (seconds <= 0) {
+        clearInterval(interval);
+        window.location.href = '/es/';
+      }
+    }, 1000);
+  </script>
+</Layout>
