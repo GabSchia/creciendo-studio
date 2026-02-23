@@ -20,9 +20,9 @@ import Footer from '../../components/Footer.astro';
         <div class="absolute inset-0 bg-forest/90"></div>
       </div>
 
-      <!-- Animated Glow -->
+      <!-- Subtle glow (no blur for performance) -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-terracotta/20 rounded-full blur-[150px] animate-pulse-glow"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-terracotta/10 rounded-full opacity-50"></div>
       </div>
 
       <!-- Content -->
@@ -285,6 +285,9 @@ import Footer from '../../components/Footer.astro';
               src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               alt="Restaurant workspace"
               class="w-full h-full object-cover"
+              loading="lazy"
+              width="800"
+              height="600"
             />
             <div class="absolute inset-0 bg-forest/30"></div>
           </div>
