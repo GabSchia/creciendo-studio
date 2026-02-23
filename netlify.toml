@@ -1,7 +1,6 @@
 [build]
-  command = "npm run build"
+  command = "TAILWIND_DISABLE_OXIDE=1 npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18"
-  TAILWIND_DISABLE_OXIDE = "1"
