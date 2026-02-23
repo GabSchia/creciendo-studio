@@ -13,8 +13,10 @@ const {
   lang = 'es'
 } = Astro.props;
 
-const alternateUrl = lang === 'es' ? '/en/' : '/es/';
-const canonicalUrl = lang === 'es' ? 'https://creciendo.studio/es/' : 'https://creciendo.studio/en/';
+const pathname = Astro.url.pathname;
+const isRoot = pathname === '/' || pathname === '';
+const alternateUrl = lang === 'es' ? '/' : '/es/';
+const canonicalUrl = isRoot ? 'https://creciendo.studio/' : (lang === 'es' ? 'https://creciendo.studio/es/' : 'https://creciendo.studio/');
 ---
 
 <!doctype html>
@@ -27,8 +29,8 @@ const canonicalUrl = lang === 'es' ? 'https://creciendo.studio/es/' : 'https://c
     <!-- Canonical & Hreflang for SEO -->
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="es" href="https://creciendo.studio/es/" />
-    <link rel="alternate" hreflang="en" href="https://creciendo.studio/en/" />
-    <link rel="alternate" hreflang="x-default" href="https://creciendo.studio/en/" />
+    <link rel="alternate" hreflang="en" href="https://creciendo.studio/" />
+    <link rel="alternate" hreflang="x-default" href="https://creciendo.studio/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
