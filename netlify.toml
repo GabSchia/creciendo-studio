@@ -4,4 +4,4 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  TAILWIND_DISABLE_OXIDE = "true"
+  TAILWIND_DISABLE_OXIDE = "1"
